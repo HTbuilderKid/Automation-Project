@@ -5,4 +5,4 @@
 
 29. The patterns are deterministic, because the automaton will always "grow" in the same way, just like I mentioned in question 27
 
-30. 
+31. We created a new array so that updates won't interfere with each other. If we changed the state directly, we'll get the wrong results because we'd be using some already updated values while we're still calculating others.
