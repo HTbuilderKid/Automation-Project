@@ -51,7 +51,7 @@ public class Automaton
         int center = state[0];
         for(int i = 0; i < state.length; i++) {
             int right = (i + 1 < state.length) ? state[i + 1] : 0;
-            nextState[i] = (left + center + right) % 2;
+            nextState[i] = calculateNextState(left, center, right);
             left = center;
             center = right;
         }
