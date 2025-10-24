@@ -46,16 +46,16 @@ public class Automaton
      */
     public void update()
     {
+        int[] nextState = new int[state.length];
         int left = 0;
         int center = state[0];
-        int right;
         for(int i = 0; i < state.length; i++) {
-            right = (i + 1 < state.length) ? state[i + 1] : 0;
-            int newValue = (left + center + right) % 2;
+            int right = (i + 1 < state.length) ? state[i + 1] : 0;
+            nextState[i] = (left + center + right) % 2;
             left = center;
             center = right;
-            state[i] = newValue;
         }
+        state = nextState;
     }
     
     /**
